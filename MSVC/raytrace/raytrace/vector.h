@@ -54,10 +54,6 @@ public:
 		this->origin = origin;
 		this->dir = dir.Normalized();
 	}
-	Ray()
-	{
-
-	}
 	VECTOR3D position(float mul);
 	VECTOR3D origin, dir;
 };
