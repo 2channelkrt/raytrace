@@ -9,8 +9,8 @@
 
 #include <vector>
 
-#define WINDOWHEIGHT 500
-#define WINDOWWIDTH 500
+#define WINDOWHEIGHT 150
+#define WINDOWWIDTH 150
 
 using namespace std;
 void initGL();
