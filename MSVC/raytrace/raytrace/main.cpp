@@ -9,8 +9,8 @@
 
 #include <vector>
 
-#define WINDOWHEIGHT 800
-#define WINDOWWIDTH 800
+#define WINDOWHEIGHT 500
+#define WINDOWWIDTH 500
 
 using namespace std;
 void initGL();
@@ -135,79 +135,81 @@ void Rendering()
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray1(camera.position, nearVec - camera.position);
+			Ray ray = Ray(camera.position, nearVec - camera.position);
 
-			color1 = raytrace(ray1, depth, &objects, light1);//0 means depth
+			color1 = raytrace(ray, depth, &objects, light1);//0 means depth
+			
+			
 			gluUnProject(i + 0.5, j, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray2(camera.position, nearVec - camera.position);
+			ray= Ray(camera.position, nearVec - camera.position);
 
-			color2 = raytrace(ray2, depth, &objects, light1);//0 means depth
+			color2 = raytrace(ray, depth, &objects, light1);//0 means depth
 
 
 			gluUnProject(i + 1, j, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray3(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color3 = raytrace(ray3, depth, &objects, light1);//0 means depth
+			color3 = raytrace(ray, depth, &objects, light1);//0 means depth
 
 
 			gluUnProject(i + 1, j + 0.5, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray4(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color4 = raytrace(ray4, depth, &objects, light1);//0 means depth
+			color4 = raytrace(ray, depth, &objects, light1);//0 means depth
 
 
 			gluUnProject(i + 1, j + 1, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray5(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color5 = raytrace(ray5, depth, &objects, light1);//0 means depth
+			color5 = raytrace(ray, depth, &objects, light1);//0 means depth
 
 
 			gluUnProject(i + 0.5, j + 1, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray6(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color6 = raytrace(ray6, depth, &objects, light1);//0 means depth
+			color6 = raytrace(ray, depth, &objects, light1);//0 means depth
 
 
 			gluUnProject(i, j + 1, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray7(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color7 = raytrace(ray7, depth, &objects, light1);//0 means depth
+			color7 = raytrace(ray, depth, &objects, light1);//0 means depth
 
 
 			gluUnProject(i, j + 0.5, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray8(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color8 = raytrace(ray8, depth, &objects, light1);//0 means depth
+			color8 = raytrace(ray, depth, &objects, light1);//0 means depth
 
 
 			gluUnProject(i + 0.5, j + 0.5, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray9(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color9 = raytrace(ray9, depth, &objects, light1);//0 means depth
+			color9 = raytrace(ray, depth, &objects, light1);//0 means depth
 
 			VECTOR3D finalColor1 = (color1 + color2 + color3 + color4 + color5 + color6 + color7 + color8 + color9) / 9.0;
 
@@ -216,79 +218,79 @@ void Rendering()
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray11(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color1 = raytrace(ray11, depth, &objects, light2);//0 means depth
+			color1 = raytrace(ray, depth, &objects, light2);//0 means depth
 			gluUnProject(i + 0.5, j, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray12(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color2 = raytrace(ray12, depth, &objects, light2);//0 means depth
+			color2 = raytrace(ray, depth, &objects, light2);//0 means depth
 
 
 			gluUnProject(i + 1, j, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray13(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color3 = raytrace(ray13, depth, &objects, light2);//0 means depth
+			color3 = raytrace(ray, depth, &objects, light2);//0 means depth
 
 
 			gluUnProject(i + 1, j + 0.5, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray14(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color4 = raytrace(ray14, depth, &objects, light2);//0 means depth
+			color4 = raytrace(ray, depth, &objects, light2);//0 means depth
 
 
 			gluUnProject(i + 1, j + 1, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray15(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color5 = raytrace(ray15, depth, &objects, light2);//0 means depth
+			color5 = raytrace(ray, depth, &objects, light2);//0 means depth
 
 
 			gluUnProject(i + 0.5, j + 1, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray16(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color6 = raytrace(ray16, depth, &objects, light2);//0 means depth
+			color6 = raytrace(ray, depth, &objects, light2);//0 means depth
 
 
 			gluUnProject(i, j + 1, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray17(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color7 = raytrace(ray17, depth, &objects, light2);//0 means depth
+			color7 = raytrace(ray, depth, &objects, light2);//0 means depth
 
 
 			gluUnProject(i, j + 0.5, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray18(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color8 = raytrace(ray18, depth, &objects, light2);//0 means depth
+			color8 = raytrace(ray, depth, &objects, light2);//0 means depth
 
 
 			gluUnProject(i + 0.5, j + 0.5, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray19(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color9 = raytrace(ray19, depth, &objects, light2);//0 means depth
+			color9 = raytrace(ray, depth, &objects, light2);//0 means depth
 
 			VECTOR3D finalColor2 = (color1 + color2 + color3 + color4 + color5 + color6 + color7 + color8 + color9) / 9.0;
 
@@ -297,79 +299,80 @@ void Rendering()
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray21(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color1 = raytrace(ray21, depth, &objects, light3);//0 means depth
+			color1 = raytrace(ray, depth, &objects, light3);//0 means depth
 			gluUnProject(i + 0.5, j, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray22(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color2 = raytrace(ray22, depth, &objects, light3);//0 means depth
+			color2 = raytrace(ray, depth, &objects, light3);//0 means depth
 
 
 			gluUnProject(i + 1, j, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray23(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color3 = raytrace(ray23, depth, &objects, light3);//0 means depth
+			color3 = raytrace(ray, depth, &objects, light3);//0 means depth
 
 
 			gluUnProject(i + 1, j + 0.5, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray24(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color4 = raytrace(ray24, depth, &objects, light3);//0 means depth
+			color4 = raytrace(ray, depth, &objects, light3);//0 means depth
 
 
 			gluUnProject(i + 1, j + 1, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray25(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color5 = raytrace(ray25, depth, &objects, light3);//0 means depth
+			color5 = raytrace(ray, depth, &objects, light3);//0 means depth
 
 
 			gluUnProject(i + 0.5, j + 1, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray26(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color6 = raytrace(ray26, depth, &objects, light3);//0 means depth
+			color6 = raytrace(ray, depth, &objects, light3);//0 means depth
 
 
 			gluUnProject(i, j + 1, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray27(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color7 = raytrace(ray27, depth, &objects, light3);//0 means depth
+			color7 = raytrace(ray, depth, &objects, light3);//0 means depth
 
 
 			gluUnProject(i, j + 0.5, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray28(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color8 = raytrace(ray28, depth, &objects, light3);//0 means depth
+			color8 = raytrace(ray, depth, &objects, light3);//0 means depth
 
 
 			gluUnProject(i + 0.5, j + 0.5, 0.001, modelView, projection, viewPort, &nearX, &nearY, &nearZ);
 			nearVec.x = (float)nearX;
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
-			Ray ray29(camera.position, nearVec - camera.position);
+			ray = Ray(camera.position, nearVec - camera.position);
 
-			color9 = raytrace(ray29, depth, &objects, light3);//0 means depth
+			color9 = raytrace(ray, depth, &objects, light3);//0 means depth
+
 
 			VECTOR3D finalColor3 = (color1 + color2 + color3 + color4 + color5 + color6 + color7 + color8 + color9) / 9.0;
 

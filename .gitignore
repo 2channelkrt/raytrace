@@ -2,4 +2,4 @@
 # 이 .gitignore 파일은 Microsoft(R) Visual Studio에서 자동으로 만들어졌습니다.
 ################################################################################
 
-/raytrace/.vs/raytrace/v16
+MSVC/raytrace/.vs/raytrace/v16
