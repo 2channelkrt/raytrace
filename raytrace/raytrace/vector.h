@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cmath>
-
+#include <cstdio>
 class VECTOR3D
 {
 public:
@@ -11,6 +11,11 @@ public:
 
 	VECTOR3D(float x, float y, float z)
 		:x(x), y(y), z(z) {}
+
+	void print()
+	{
+		printf("%f %f %f\n", x, y, z);
+	}
 
 	float Magnitude();
 	float InnerProduct(VECTOR3D v);
@@ -42,11 +47,18 @@ class Ray
 public:
 	Ray(VECTOR3D origin, VECTOR3D dir)
 	{
+		static int i = 0;
+		i++;
+		if(i%100000==0) //if this line doesn't exist, memory violation. Why?
+		//printf("%f\n", this);
 		this->origin = origin;
 		this->dir = dir.Normalized();
 	}
-	VECTOR3D position(float mul);
+	Ray()
+	{
 
+	}
+	VECTOR3D position(float mul);
 	VECTOR3D origin, dir;
 };
 #pragma once

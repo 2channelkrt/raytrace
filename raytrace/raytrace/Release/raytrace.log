@@ -1,58 +1,12 @@
-﻿  functions.cpp
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\functions.cpp(8,10): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  main.cpp
+﻿  main.cpp
 C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\main.cpp(25,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  object.cpp
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(30,10): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(33,10): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(42,19): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(48,12): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(49,12): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(116,30): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(117,29): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(118,29): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(121,30): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(122,30): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(123,30): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(125,32): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(126,32): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(127,32): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(129,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(137,26): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(141,28): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(142,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(143,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(154,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(155,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(156,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(158,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(159,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(160,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(175,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(176,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(177,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(189,28): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(190,28): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(192,32): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(193,32): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(194,32): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(209,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(210,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(222,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(223,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(224,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(239,26): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(241,26): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(243,28): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(244,27): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\object.cpp(245,28): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-  raytrace.cpp
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\raytrace.cpp(8,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\raytrace.cpp(36,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\raytrace.cpp(58,4): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\taro\Documents\github_repos\raytrace\raytrace\raytrace\raytrace.cpp(60,79): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다.
-  Previous IPDB not found, fall back to full compilation.
-  All 114 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  코드를 생성했습니다.
-  raytrace.vcxproj -> C:\Users\taro\Documents\github_repos\raytrace\raytrace\Release\raytrace.exe
+main.obj : error LNK2001: __imp____glutCreateWindowWithExit@8 외부 기호를 확인할 수 없습니다.
+main.obj : error LNK2001: __imp____glutInitWithExit@12 외부 기호를 확인할 수 없습니다.
+main.obj : error LNK2001: __imp__glutInitDisplayMode@4 외부 기호를 확인할 수 없습니다.
+main.obj : error LNK2001: __imp__glutDisplayFunc@4 외부 기호를 확인할 수 없습니다.
+main.obj : error LNK2001: __imp__glutMainLoop@0 외부 기호를 확인할 수 없습니다.
+main.obj : error LNK2001: __imp__glutInitWindowPosition@8 외부 기호를 확인할 수 없습니다.
+main.obj : error LNK2001: __imp__glutGet@4 외부 기호를 확인할 수 없습니다.
+main.obj : error LNK2001: __imp__glutInitWindowSize@8 외부 기호를 확인할 수 없습니다.
+main.obj : error LNK2001: __imp__glutSwapBuffers@0 외부 기호를 확인할 수 없습니다.
+C:\Users\taro\Documents\github_repos\raytrace\raytrace\Release\raytrace.exe : fatal error LNK1120: 9개의 확인할 수 없는 외부 참조입니다.
