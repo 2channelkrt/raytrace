@@ -1,3 +1,4 @@
+#include <string.h>
 #include "GL/freeglut.h"
 #include "object.h"
 #include "functions.h"
@@ -7,13 +8,13 @@ bool plane::hit(Ray r, float* t)
 {
 	r.dir.Normalized();
 	float d;
-	if (normalDirection == "x")
+	if (normalDirection == 'x')
 		d = (this->a - r.origin.x) / r.dir.x;
-	else if (normalDirection == "y")
+	else if (normalDirection == 'y')
 		d = (this->a - r.origin.y) / r.dir.y;
-	else if (normalDirection == "z")
+	else if (normalDirection == 'z')
 		d = (this->a - r.origin.z) / r.dir.z;
-
+	else printf("something wrong with directon\n");
 
 	if (d < 0.01)
 	{
@@ -21,7 +22,6 @@ bool plane::hit(Ray r, float* t)
 		return false;
 	}
 	*t = d;
-	//printf("function hit on floor, t value:%d", *t);
 	return true;
 }
 bool sphere::hit(Ray r, float* t)
@@ -63,12 +63,10 @@ VECTOR3D sphere::getColor(VECTOR3D point, VECTOR3D light, VECTOR3D ray_origin)
 	pointNormal.Normalized();
 	VECTOR3D inputRay = ray_origin - point;//ray
 	inputRay.Normalized();
-	VECTOR3D lightRay = light - point;//�Ի籤
+	VECTOR3D lightRay = light - point;//�Ի籤
 	lightRay.Normalized();
-
 	VECTOR3D reflectRay = lightRay * (-1.0) + pointNormal * (lightRay.InnerProduct(pointNormal)) * 2.0;
 	//VECTOR3D reflectRay = get_reflection(point, light);
-
 	float diffuse = max((float)0.0, pointNormal.InnerProduct(lightRay));
 	float specular = pow(max((float)0.0, inputRay.InnerProduct(reflectRay.Normalized())), k_shineness);
 
@@ -85,7 +83,6 @@ VECTOR3D plane::getColor(VECTOR3D point, VECTOR3D light, VECTOR3D ray_origin)
 
 	VECTOR3D reflectRay = lightRay * (-1.0) + pointNormal * (lightRay.InnerProduct(pointNormal)) * 2.0;
 	//VECTOR3D reflectRay = get_reflection(point, light);
-
 	float diffuse = max((float)0.0, pointNormal.InnerProduct(lightRay));
 	float specular = pow(max((float)0.0, inputRay.InnerProduct(reflectRay.Normalized())), k_shineness);
 
@@ -111,7 +108,7 @@ VECTOR3D plane::get_reflection(VECTOR3D point, VECTOR3D light)
 
 void object::setMaterial(const char* material)
 {
-	if (material == "Gold")
+	if (strcmp(material,"Gold")==0)
 	{
 		this->k_ambient.x = 0.24725;
 		this->k_ambient.y = 0.1995;
@@ -128,7 +125,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 51.2;
 	}
-	else if (material == "Cyan")
+	else if (strcmp(material,"Cyan")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.05f;
@@ -144,7 +141,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 10.0f;
 	}
-	else if (material == "White")
+	else if (strcmp(material,"White")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.0f;
@@ -161,7 +158,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 32.0f;
 	}
-	else if (material == "WhiteRubber")
+	else if (strcmp(material,"WhiteRubber")==0)
 	{
 		this->k_ambient.x = 0.05f;
 		this->k_ambient.y = 0.05f;
@@ -178,7 +175,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 10.0f;
 	}
-	else if (material == "Pearl")
+	else if (strcmp(material,"Pearl")==0)
 	{
 		this->k_ambient.x = 0.25f;
 		this->k_ambient.y = 0.20725f;
@@ -195,7 +192,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 11.264f;
 	}
-	else if (material == "Yellow")
+	else if (strcmp(material,"Yellow")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.0f;
@@ -212,7 +209,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 10.0f;
 	}
-	else if (material == "Black")
+	else if (strcmp(material,"Black")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.0f;
@@ -229,7 +226,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 32.0f;
 	}
-	else if (material == "Green")
+	else if (strcmp(material,"Green")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.05f;
@@ -246,7 +243,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 10.0f;
 	}
-	else if (material == "Brass")
+	else if (strcmp(material,"Brass")==0)
 	{
 		this->k_ambient.x = 0.33f;
 		this->k_ambient.y = 0.22f;
@@ -263,7 +260,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 27.90f;
 	}
-	else if (material == "Bronze")
+	else if (strcmp(material,"Bronze")==0)
 	{
 		this->k_ambient.x = 0.21f;
 		this->k_ambient.y = 0.12f;
@@ -280,7 +277,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 25.6f;
 	}
-	else if (material == "Chrome")
+	else if (strcmp(material,"Chrome")==0)
 	{
 		this->k_ambient.x = 0.25f;
 		this->k_ambient.y = 0.25f;
@@ -297,7 +294,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 76.8f;
 	}
-	else if (material == "Copper")
+	else if (strcmp(material,"Copper")==0)
 	{
 		this->k_ambient.x = 0.19f;
 		this->k_ambient.y = 0.07f;
@@ -314,7 +311,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 12.8f;
 	}
-	else if (material == "Emerald")
+	else if (strcmp(material,"Emerald")==0)
 	{
 		this->k_ambient.x = 0.02f;
 		this->k_ambient.y = 0.17f;
@@ -331,7 +328,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 76.8f;
 	}
-	else if (material == "Jade")
+	else if (strcmp(material,"Jade")==0)
 	{
 		this->k_ambient.x = 0.14f;
 		this->k_ambient.y = 0.22f;
@@ -348,7 +345,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 12.8f;
 	}
-	else if (material == "Obsidian")
+	else if (strcmp(material,"Obsidian")==0)
 	{
 		this->k_ambient.x = 0.05f;
 		this->k_ambient.y = 0.05f;
@@ -365,7 +362,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 38.4f;
 	}
-	else if (material == "Ruby")
+	else if (strcmp(material,"Ruby")==0)
 	{
 		this->k_ambient.x = 0.17f;
 		this->k_ambient.y = 0.01f;
@@ -382,7 +379,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 76.8f;
 	}
-	else if (material == "Silver")
+	else if (strcmp(material,"Silver")==0)
 	{
 		this->k_ambient.x = 0.19f;
 		this->k_ambient.y = 0.19f;
@@ -399,7 +396,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 27.f;
 	}
-	else if (material == "Turquoise")
+	else if (strcmp(material,"Turquoise")==0)
 	{
 		this->k_ambient.x = 0.1f;
 		this->k_ambient.y = 0.19f;
@@ -416,7 +413,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 12.8f;
 	}
-	else if (material == "Plastic_Black")
+	else if (strcmp(material,"Plastic_Black")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.0f;
@@ -433,7 +430,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 32.0f;
 	}
-	else if (material == "Plastic_Cyan")
+	else if (strcmp(material,"Plastic_Cyan")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.1f;
@@ -450,7 +447,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 32.0f;
 	}
-	else if (material == "Plastic_Green")
+	else if (strcmp(material,"Plastic_Green")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.0f;
@@ -467,7 +464,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 32.0f;
 	}
-	else if (material == "Plastic_Red")
+	else if (strcmp(material,"Plastic_Red")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.0f;
@@ -484,7 +481,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 32.0f;
 	}
-	else if (material == "Plastic_White")
+	else if (strcmp(material,"Plastic_White")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.0f;
@@ -501,7 +498,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 32.0f;
 	}
-	else if (material == "Plastic_Yellow")
+	else if (strcmp(material,"Plastic_Yellow")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.0f;
@@ -518,7 +515,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 32.0f;
 	}
-	else if (material == "Rubber_Black")
+	else if (strcmp(material,"Rubber_Black")==0)
 	{
 		this->k_ambient.x = 0.02f;
 		this->k_ambient.y = 0.02f;
@@ -535,7 +532,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 10.0f;
 	}
-	else if (material == "Rubber_Cyan")
+	else if (strcmp(material,"Rubber_Cyan")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.05f;
@@ -552,7 +549,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 10.0f;
 	}
-	else if (material == "Rubber_Green")
+	else if (strcmp(material,"Rubber_Green")==0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.05f;
@@ -569,7 +566,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 10.0f;
 	}
-	else if (material == "Rubber_Red")
+	else if (strcmp(material,"Rubber_Red")==0)
 	{
 		this->k_ambient.x = 0.05f;
 		this->k_ambient.y = 0.0f;
@@ -586,7 +583,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 10.0f;
 	}
-	else if (material == "Rubber_White")
+	else if (strcmp(material,"Rubber_White")==0)
 	{
 		this->k_ambient.x = 0.05f;
 		this->k_ambient.y = 0.05f;
@@ -604,7 +601,7 @@ void object::setMaterial(const char* material)
 		this->k_shineness = 10.0f;
 
 	}
-	else if (material == "Rubber_Yellow")
+	else if (strcmp(material,"Rubber_Yellow")==0)
 	{
 		this->k_ambient.x = 0.05f;
 		this->k_ambient.y = 0.05f;
@@ -620,5 +617,9 @@ void object::setMaterial(const char* material)
 		this->k_specular.z = 0.04f;
 
 		this->k_shineness = 10.0f;
+	}
+	else
+	{
+		printf("wrong color input\n");
 	}
 }

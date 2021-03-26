@@ -13,10 +13,10 @@ public:
 
 	virtual ~object() {}
 	void setMaterial(const char* material);
-	virtual bool hit(Ray r, float* t) = 0 {}
-	virtual VECTOR3D getColor(VECTOR3D point, VECTOR3D light, VECTOR3D ray) = 0 {}
-	virtual VECTOR3D get_normal(VECTOR3D point) = 0 {};
-	virtual VECTOR3D get_reflection(VECTOR3D point, VECTOR3D light) = 0 {};
+	virtual bool hit(Ray r, float* t) = 0;
+	virtual VECTOR3D getColor(VECTOR3D point, VECTOR3D light, VECTOR3D ray) = 0;
+	virtual VECTOR3D get_normal(VECTOR3D point) = 0;
+	virtual VECTOR3D get_reflection(VECTOR3D point, VECTOR3D light) = 0;
 };
 class sphere :public object
 {
@@ -39,7 +39,7 @@ public:
 class plane :public object
 {
 public:
-	plane(float Loc, VECTOR3D normal, const char* dir, const char* material)
+	plane(float Loc, VECTOR3D normal, const char dir, const char* material)
 	{
 		setMaterial(material);
 		this->a = Loc;
@@ -51,6 +51,6 @@ public:
 	virtual VECTOR3D get_normal(VECTOR3D point);
 	virtual VECTOR3D get_reflection(VECTOR3D point, VECTOR3D light);
 	float a;
-	const char* normalDirection;
+	char normalDirection;
 	VECTOR3D normal;
 };

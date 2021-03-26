@@ -1,9 +1,11 @@
 CC=g++
+CFLAGS=-lGL -lglut -lGLU
 
-SRC	= functions.cpp
+SRC	=main.cpp
+SRC	+= functions.cpp
 SRC	+= object.cpp
 SRC	+= raytrace.cpp
 
 
  all:
-	echo "$(SRC)"
+	$(CC) -o out $(SRC) $(CFLAGS)
