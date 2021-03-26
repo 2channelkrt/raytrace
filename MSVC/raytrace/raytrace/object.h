@@ -39,7 +39,7 @@ public:
 class plane :public object
 {
 public:
-	plane(float Loc, VECTOR3D normal, const char* dir, const char* material)
+	plane(float Loc, VECTOR3D normal, const char dir, const char* material)
 	{
 		setMaterial(material);
 		this->a = Loc;
@@ -51,6 +51,6 @@ public:
 	virtual VECTOR3D get_normal(VECTOR3D point);
 	virtual VECTOR3D get_reflection(VECTOR3D point, VECTOR3D light);
 	float a;
-	const char* normalDirection;
+	char normalDirection;
 	VECTOR3D normal;
 };

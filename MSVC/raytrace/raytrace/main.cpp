@@ -42,12 +42,13 @@ void main(int argc, char** argv)
 	VECTOR3D wall4Normal(-1, 0, 0);
 	VECTOR3D ceilingNormal(0, 0, -1);
 
-	plane floor(0, floorNormal, "z", "White");
-	plane wall1(-100, wall1Normal, "y", "White");
-	plane wall2(-100, wall2Normal, "x", "White");
-	plane wall3(100, wall3Normal, "y", "White");
-	plane wall4(100, wall4Normal, "x", "White");
-	plane ceiling(2000, ceilingNormal, "z", "White");
+
+	plane floor(0, floorNormal, 'z', "White");
+	plane wall1(-100, wall1Normal, 'y', "White");
+	plane wall2(-100, wall2Normal, 'x', "White");
+	plane wall3(100, wall3Normal, 'y', "White");
+	plane wall4(100, wall4Normal, 'x', "White");
+	plane ceiling(2000, ceilingNormal, 'z', "White");
 
 	objects.push_back(&sphere1);
 
@@ -83,7 +84,6 @@ void Rendering()
 	static int i = 0;
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -136,7 +136,6 @@ void Rendering()
 			nearVec.y = (float)nearY;
 			nearVec.z = (float)nearZ;
 			Ray ray = Ray(camera.position, nearVec - camera.position);
-
 			color1 = raytrace(ray, depth, &objects, light1);//0 means depth
 			
 			
@@ -379,7 +378,6 @@ void Rendering()
 			VECTOR3D finalColor = (finalColor1 + finalColor2 + finalColor3) / 3.0;
 			glColor3f(finalColor.x, finalColor.y, finalColor.z);
 			glVertex3f(nearVec.x, nearVec.y, nearVec.z);
-
 			////////////////////////////////////////////////////////////
 		}
 		printf("row %d render complete\n", i);

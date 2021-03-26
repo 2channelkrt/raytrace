@@ -1,3 +1,4 @@
+#include <string.h>
 #include "GL/freeglut.h"
 #include "object.h"
 #include "functions.h"
@@ -7,13 +8,13 @@ bool plane::hit(Ray r, float* t)
 {
 	r.dir.Normalized();
 	float d;
-	if (normalDirection == "x")
+	if (normalDirection == 'x')
 		d = (this->a - r.origin.x) / r.dir.x;
-	else if (normalDirection == "y")
+	else if (normalDirection == 'y')
 		d = (this->a - r.origin.y) / r.dir.y;
-	else if (normalDirection == "z")
+	else if (normalDirection == 'z')
 		d = (this->a - r.origin.z) / r.dir.z;
-
+	else printf("something wrong with directon\n");
 
 	if (d < 0.01)
 	{
@@ -21,7 +22,6 @@ bool plane::hit(Ray r, float* t)
 		return false;
 	}
 	*t = d;
-	//printf("function hit on floor, t value:%d", *t);
 	return true;
 }
 bool sphere::hit(Ray r, float* t)
@@ -65,10 +65,8 @@ VECTOR3D sphere::getColor(VECTOR3D point, VECTOR3D light, VECTOR3D ray_origin)
 	inputRay.Normalized();
 	VECTOR3D lightRay = light - point;//�Ի籤
 	lightRay.Normalized();
-
 	VECTOR3D reflectRay = lightRay * (-1.0) + pointNormal * (lightRay.InnerProduct(pointNormal)) * 2.0;
 	//VECTOR3D reflectRay = get_reflection(point, light);
-
 	float diffuse = max((float)0.0, pointNormal.InnerProduct(lightRay));
 	float specular = pow(max((float)0.0, inputRay.InnerProduct(reflectRay.Normalized())), k_shineness);
 
@@ -85,7 +83,6 @@ VECTOR3D plane::getColor(VECTOR3D point, VECTOR3D light, VECTOR3D ray_origin)
 
 	VECTOR3D reflectRay = lightRay * (-1.0) + pointNormal * (lightRay.InnerProduct(pointNormal)) * 2.0;
 	//VECTOR3D reflectRay = get_reflection(point, light);
-
 	float diffuse = max((float)0.0, pointNormal.InnerProduct(lightRay));
 	float specular = pow(max((float)0.0, inputRay.InnerProduct(reflectRay.Normalized())), k_shineness);
 
@@ -128,7 +125,7 @@ void object::setMaterial(const char* material)
 
 		this->k_shineness = 51.2;
 	}
-	else if (material == "Cyan")
+	else if (strcmp(material, "Cyan") == 0)
 	{
 		this->k_ambient.x = 0.0f;
 		this->k_ambient.y = 0.05f;
@@ -620,5 +617,9 @@ void object::setMaterial(const char* material)
 		this->k_specular.z = 0.04f;
 
 		this->k_shineness = 10.0f;
+	}
+	else
+	{
+		printf("wrong color input\n");
 	}
 }

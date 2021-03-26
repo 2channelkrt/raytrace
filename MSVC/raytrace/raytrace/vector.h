@@ -49,7 +49,7 @@ public:
 	{
 		static int i = 0;
 		i++;
-		if(i%100000==0) //if this line doesn't exist, memory violation. Why?
+		if (i % 100000 == 0) i++; //if this line doesn't exist, memory violation. Why?
 		//printf("%f\n", this);
 		this->origin = origin;
 		this->dir = dir.Normalized();
