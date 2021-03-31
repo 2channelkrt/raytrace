@@ -105,6 +105,12 @@ VECTOR3D plane::get_reflection(VECTOR3D point, VECTOR3D light)
 {
 	return ((light - point).Normalized() * (-1.0) + get_normal(point) * ((light - point).Normalized().InnerProduct(get_normal(point))) * 2.0).Normalized();
 }
+VECTOR3D triangle::compute_normal()
+{
+	VECTOR3D temp(0,0,0);
+	return temp;
+}
+
 
 void object::setMaterial(const char* material)
 {

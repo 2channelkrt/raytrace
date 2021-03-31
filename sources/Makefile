@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-lGL -lglut -lGLU
+CFLAGS=-lGL -lglut -lGLU -std=gnu++17
 
 SRC	=main.cpp
 SRC	+= functions.cpp

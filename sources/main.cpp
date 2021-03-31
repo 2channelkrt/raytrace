@@ -1,3 +1,4 @@
+#include "argparse.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include "GL/freeglut.h"
@@ -8,21 +9,44 @@
 #include "camera.h"
 
 #include <vector>
-
-#define WINDOWHEIGHT 150
-#define WINDOWWIDTH 150
-
+//hyperparameters by argparser//
+int WINDOWHEIGHT;
+int WINDOWWIDTH;
+int depth;
+///////////////////////////////
 using namespace std;
+
 void initGL();
 void EventHandlingLoop();
 void Rendering();
 
 Camera camera;
 vector<object*> objects;
-int depth;
 
 int main(int argc, char** argv)
 {
+	argparse::ArgumentParser program("testprogram_name");
+
+	program.add_argument("-wh","--window_height").help("set window_height").nargs(1).default_value(50).action([](const string& v){return stoi(v);});
+	program.add_argument("-ww","--window-width").help("set window_width").nargs(1).default_value(50).action([](const string& v){return stoi(v);});
+	program.add_argument("-d", "--depth").help("set reflection depth").nargs(1).default_value(1).action([](const string&v ){return stoi(v);});
+
+	try
+	{
+		program.parse_args(argc,argv);
+	}
+	catch(const runtime_error& err)
+	{
+		cout << "argparse failed" << endl;
+		cout << err.what() << endl;
+		cout << program;
+		exit(0);
+	}
+
+	WINDOWHEIGHT=program.get<int>("-wh");
+	WINDOWWIDTH=program.get<int>("-ww");
+	depth=program.get<int>("-d");
+
 	glutInit(&argc, argv);
 	initGL();
 	VECTOR3D sphere1center(0.0f, -10.0f, 15.0f);
@@ -95,7 +119,6 @@ void Rendering()
 	GLdouble modelView[16];
 	GLdouble projection[16];
 	GLint viewPort[4];
-	depth = 5;
 	//VECTOR3D light1(0,0,50);
 	VECTOR3D light1(30, -40, 40);
 	//VECTOR3D light1(60, 70, 0);

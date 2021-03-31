@@ -54,3 +54,18 @@ public:
 	char normalDirection;
 	VECTOR3D normal;
 };
+class triangle :public object
+{
+public:
+	triangle(VECTOR3D a,VECTOR3D b, VECTOR3D c, const char* material)//should be given in cw. Noraml will be calculated as is.
+	{
+		setMaterial(material);
+		this->a=a;
+		this->b=b;
+		this->c=c;
+		this->normal=compute_normal();
+	}
+	VECTOR3D compute_normal();
+	VECTOR3D a,b,c;
+	VECTOR3D normal;
+};
