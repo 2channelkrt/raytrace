@@ -1,12 +1,11 @@
 # raytrace
-This repository demonstrates raytracing by implementing interaction between 'point light' & 'sphere and plane'. This started as raytracing project for my 2018-1 CG class.<br/>
-Legacy branch includes MSVC project, but is no longer maintained. Default compile environment is now Linux/Ubuntu.
+This repository demonstrates raytracing by implementing interaction between 'point light' & 'sphere and plane'. This started as raytracing project for my 2018-1 CG class. Legacy branch includes MSVC project, but is no longer maintained. Default compile environment is now Linux/Ubuntu.
 
 # Prerequisite
 To compile the code, you simply need 'g++'. Although this code is based on freeglut, all necessary files are included in the source.
 
 # How to Run
-go to 'sources' directory, and simply run 'make'.<br/>
+Go to 'sources' directory, and simply run 'make'.<br/>
 This will make a binary 'out'. Simply run by typing './out' to run the program with default settings.<br/>
 Currently, following optional parameters are supported.<br/><br/>
 ![argument_display](assets/argument_display.JPG)
