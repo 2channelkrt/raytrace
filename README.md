@@ -8,7 +8,7 @@ To compile the code, you simply need 'g++'. Although this code is based on freeg
 # How to Run
 go to 'sources' directory, and simply run 'make'.<br/>
 This will make a binary 'out'. Simply run by typing './out' to run the program with default settings.<br/>
-Currently, following optional parameters are supported.
+Currently, following optional parameters are supported.<br/>
 ![argument_display](assets/argument_display.JPG)
 
 # Example
