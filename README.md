@@ -2,7 +2,9 @@
 This repository demonstrates raytracing by implementing interaction between 'point light' & 'sphere and plane'. This started as raytracing project for my 2018-1 CG class. Legacy branch includes MSVC project, but is no longer maintained. Default compile environment is now Linux/Ubuntu.
 
 # Prerequisite
-To compile the code, you simply need 'g++'. Although this code is based on freeglut, all necessary files are included in the source.
+You need 'g++' and 'freeglut' To compile this code. To install these libraries, run the following:
+
+	sudo apt-get install freeglut3-dev g++
 
 # How to Run
 Go to 'sources' directory, and simply run 'make'.<br/>
