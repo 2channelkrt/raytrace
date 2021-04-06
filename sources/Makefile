@@ -1,6 +1,6 @@
 CC=g++
-CFLAGS=-lGL -lglut -lGLU -std=gnu++17
-
+CFLAGS=-std=gnu++17
+#-lGL -lglut -lGLU 
 SRC	=main.cpp
 SRC	+= functions.cpp
 SRC	+= object.cpp

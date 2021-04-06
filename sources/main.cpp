@@ -1,7 +1,7 @@
 #include "argparse.hpp"
 #include <stdio.h>
 #include <stdlib.h>
-#include "GL/freeglut.h"
+#include "include/GL/freeglut.h"
 
 #include "raytrace.h"
 #include "functions.h"//includees "quat.h" "vector.h" "rotateVec.h"
@@ -27,8 +27,8 @@ int main(int argc, char** argv)
 {
 	argparse::ArgumentParser program("testprogram_name");
 
-	program.add_argument("-wh","--window_height").help("set window_height").nargs(1).default_value(50).action([](const string& v){return stoi(v);});
-	program.add_argument("-ww","--window-width").help("set window_width").nargs(1).default_value(50).action([](const string& v){return stoi(v);});
+	program.add_argument("-wh","--window_height").help("set window_height").nargs(1).default_value(100).action([](const string& v){return stoi(v);});
+	program.add_argument("-ww","--window-width").help("set window_width").nargs(1).default_value(100).action([](const string& v){return stoi(v);});
 	program.add_argument("-d", "--depth").help("set reflection depth").nargs(1).default_value(1).action([](const string&v ){return stoi(v);});
 
 	try

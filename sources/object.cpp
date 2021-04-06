@@ -1,5 +1,5 @@
 #include <string.h>
-#include "GL/freeglut.h"
+#include "include/GL/freeglut.h"
 #include "object.h"
 #include "functions.h"
 #include "stdio.h"

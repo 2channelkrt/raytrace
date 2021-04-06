@@ -1,5 +1,5 @@
 #pragma once
-#include "GL/freeglut.h"
+#include "include/GL/freeglut.h"
 #include "vector.h"
 class object
 {
